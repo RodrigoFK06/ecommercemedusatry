@@ -25,12 +25,18 @@ export default defineConfig({
       resolve: '@medusajs/medusa/cache-redis',
       options: {
         redisUrl: process.env.REDIS_URL,
+        redisOptions: {
+          tls: {} // 🔐 fuerza TLS
+        }
       },
     },
     {
       resolve: '@medusajs/medusa/event-bus-redis',
       options: {
         redisUrl: process.env.REDIS_URL,
+        redisOptions: {
+          tls: {} // 🔐 fuerza TLS
+        }
       },
     },
     {
@@ -38,6 +44,9 @@ export default defineConfig({
       options: {
         redis: {
           url: process.env.REDIS_URL,
+          redisOptions: {
+            tls: {} // 🔐 fuerza TLS
+          }
         },
       },
     },
